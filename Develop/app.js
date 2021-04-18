@@ -42,7 +42,7 @@ const createManager = () => {
         allEmployees.push(manager)
         nextEmployee()
     })
-}
+};
 
 const createEngineer = () => {
     inquirer.prompt([
@@ -72,7 +72,7 @@ const createEngineer = () => {
         allEmployees.push(engineer)
         nextEmployee()
     })
-}
+};
 
 const createIntern = () =>{
     inquirer.prompt([
@@ -97,7 +97,12 @@ const createIntern = () =>{
             message: "What is the intern's school?"
         },
     ])
-}
+    .then(answers => {
+        const intern = new Intern(this.name, this.id, this.email, this.school)
+        allEmployees.push(intern)
+        nextEmployee()
+    })
+};
 
 const nextEmployee = () => {
     inquirer.prompt(
@@ -108,7 +113,18 @@ const nextEmployee = () => {
             choices: ['create engineer', 'create intern', 'finish']
         }
     )
-}
+    .then(answers => {
+        const choice = answer.foo
+        switch (choice) {
+            case "create engineer" :
+                return createEngineer();
+            case 'create intern' :
+                return createIntern();
+            case 'finish' :
+                return render(allEmployees);
+        }
+    })
+};
 //create inquirer questions to fill values in html renderer function
 //first set of questions generate manager information. 
 //ID automatically generates for employee based on order they are filled out
