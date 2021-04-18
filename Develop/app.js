@@ -74,6 +74,31 @@ const createEngineer = () => {
     })
 }
 
+const createIntern = () =>{
+    inquirer.prompt([
+        {
+            name: 'name',
+            type: 'input',
+            message: "What is the intern's name?"
+        },
+        {
+            name: 'id',
+            type: 'input',
+            message: "What is the intern's id number?"
+        },
+        {
+            name: 'email',
+            type: 'input',
+            message: "What is the intern's email address?"
+        },
+        {
+            name: 'school',
+            type: 'input',
+            message: "What is the intern's school?"
+        },
+    ])
+}
+
 const nextEmployee = () => {
     inquirer.prompt(
         {
