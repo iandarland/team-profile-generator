@@ -121,7 +121,9 @@ const nextEmployee = () => {
             case 'create intern' :
                 return createIntern();
             case 'finish' :
-                return render(allEmployees);
+                return fs.writeFile('complete.html', render(allEmployees), err =>{
+                    console.log(err)
+                  })
         }
     })
 };
