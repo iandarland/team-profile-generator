@@ -98,7 +98,7 @@ const createIntern = () =>{
         },
     ])
     .then(answers => {
-        const intern = new Intern(this.name, this.id, this.email, this.school)
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.school)
         allEmployees.push(intern)
         nextEmployee()
     })
@@ -114,7 +114,7 @@ const nextEmployee = () => {
         }
     )
     .then(answers => {
-        const choice = answer.foo
+        const choice = answers.foo
         switch (choice) {
             case "create engineer" :
                 return createEngineer();
@@ -125,13 +125,10 @@ const nextEmployee = () => {
         }
     })
 };
-//create inquirer questions to fill values in html renderer function
-//first set of questions generate manager information. 
-//ID automatically generates for employee based on order they are filled out
-//after manager information is filled out user is prompted with a list questionarre that asks if they want to make an engineer or inter or none
-//if none return values
-//if engineer or intern prompt user to fill out coorisponding information 
 
+const init = () => createManager()
+
+init()
 
 
 // After the user has input all employees desired, call the `render` function (required
