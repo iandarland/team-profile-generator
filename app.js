@@ -122,7 +122,7 @@ const nextEmployee = () => {
                 return createIntern();
             case 'finish' :
                 return fs.writeFile(outputPath, render(allEmployees), err =>{
-                    console.log(err)
+                    console.log('file created')
                   })
         }
     })

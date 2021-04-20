@@ -1,15 +1,11 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{ role }}</h5>
-      <p class="card-text">{{ name }}</p>
+      <h3 class="card-title">{{ role }}</h3>
+      <h5 class="card-text"><i class="fas fa-glasses mr-2"></i>{{ name }}</h5>
     </div>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">id: {{ id }}</li>
-      <li class="list-group-item">email: {{ email }}</li>
-      <li class="list-group-item">github: {{ github }}</li>
+      <li class="list-group-item">email: <a href= 'mailto: {{ email }}'>{{ email }}</a></li>
+      <li class="list-group-item">github: <a href= 'https://www.github.com/{{ github }}'>{{ github }}</a></li>
     </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
   </div>
