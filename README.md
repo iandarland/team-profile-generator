@@ -2,6 +2,8 @@
 
 ## Description 
 
+![Gif](./assets/Hnet-image.gif)
+
 Generate profiles for you team. Run node app in your terminal to quickly input your team's information via prompts in the command line. Once complete, an html file is deposited in the output folder with your team's information organized in an easy to digest format.
 
 ## Table of Contents
